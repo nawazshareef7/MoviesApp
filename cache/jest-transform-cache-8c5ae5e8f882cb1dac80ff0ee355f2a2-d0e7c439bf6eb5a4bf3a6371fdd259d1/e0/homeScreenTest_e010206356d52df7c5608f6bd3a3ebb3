@@ -1,0 +1,43 @@
+bac5b5da9c80d0a57e4c602ceba246e4
+"use strict";var _react = _interopRequireDefault(require("react"));
+var _homeScreen = _interopRequireDefault(require("../homeScreen"));
+var _reactTestRenderer = _interopRequireDefault(require("react-test-renderer"));
+var _reduxThunk = _interopRequireDefault(require("redux-thunk"));
+var _reduxMockStore = _interopRequireDefault(require("redux-mock-store"));var _jsxFileName = "D:\\MoviesApp\\components\\screens\\__tests__\\homeScreenTest.js";function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+
+
+jest.mock('react-native-gesture-handler', function () {});
+
+NativeModules.RNGestureHandlerModule = {
+  attachGestureHandler: jest.fn(),
+  createGestureHandler: jest.fn(),
+  dropGestureHandler: jest.fn(),
+  updateGestureHandler: jest.fn(),
+  forceTouchAvailable: jest.fn(),
+  State: {},
+  Directions: {} };
+
+
+NativeModules.PlatformConstants = {
+  forceTouchAvailable: false };
+
+
+NativeModules.UIManager = {
+  RCTView: function RCTView() {return {
+      directEventTypes: {} };} };
+
+
+var middlewares = [_reduxThunk.default];
+var mockStore = (0, _reduxMockStore.default)(middlewares);
+var initialState = {
+  movieList: [],
+  movieDetails: [] };
+
+var store = mockStore(initialState);
+
+
+test('renders correctly', function () {
+  var tree = _reactTestRenderer.default.create(_react.default.createElement(_homeScreen.default, { store: store, __source: { fileName: _jsxFileName, lineNumber: 40 } })).toJSON();
+  expect(tree).toMatchSnapshot();
+});

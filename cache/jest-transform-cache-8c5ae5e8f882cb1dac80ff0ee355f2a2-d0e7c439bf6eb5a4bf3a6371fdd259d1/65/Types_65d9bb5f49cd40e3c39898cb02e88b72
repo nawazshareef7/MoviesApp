@@ -1,0 +1,3 @@
+4bf34f8c480257c544c16eadd5cb9741
+"use strict";Object.defineProperty(exports, "__esModule", { value: true });exports.GET_MOVIE_Deets = exports.GET_MOVIES_LIST = void 0;var GET_MOVIES_LIST = 'GET_MOVIES_LIST';exports.GET_MOVIES_LIST = GET_MOVIES_LIST;
+var GET_MOVIE_Deets = 'GET_MOVIE_Deets';exports.GET_MOVIE_Deets = GET_MOVIE_Deets;
