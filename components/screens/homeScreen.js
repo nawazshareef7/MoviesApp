@@ -1,8 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import * as movieAction  from '../action/ListMovies'
-// import firebase from 'react-native-firebase';
+import { bindActionCreators } from 'redux';
 
+import * as movieAction  from '../action/ListMovies';
 import {
   StyleSheet,
   Text,
@@ -13,18 +13,13 @@ import {
 
 
 } from 'react-native';
-// import {ScrollView} from 'react-native-gesture-handler';
-import { bindActionCreators } from 'redux';
-import firebase from '@react-native-firebase/app';
-import crashlytics from '@react-native-firebase/crashlytics'
+
 
 class HomeScreen extends React.Component {
 
   componentDidMount()
   {
-    firebase.crashlytics().log('Test Message!');
-   // firebase.crashlytics().crash();
-    firebase.crashlytics().recordError(37,"Test Errorrrrrrrrr");    
+    
     console.log("component did mount");
     let { test } = this.props;
     console.log("component did mount"+this.props.test);
@@ -37,7 +32,7 @@ class HomeScreen extends React.Component {
   // }
   constructor() {
     super();
-    
+   
     this.state = {
       data: ['Bumblebee', 'Aquaman', 'Dragon Ball Super: Broly', 'Steelman'],
       data1: [2, 4, 3, 8],

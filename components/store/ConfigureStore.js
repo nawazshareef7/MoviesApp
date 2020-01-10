@@ -6,7 +6,8 @@ import thunk from 'redux-thunk';
 const rootReducer = combineReducers(
     { 
         movieList: movieReducer,
-        movieDetails: movieReducer 
+        movieDetails: movieReducer,
+        searchMovieList: movieReducer
     }
 );
 const configureStore = () => {

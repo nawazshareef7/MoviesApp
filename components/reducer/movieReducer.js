@@ -1,8 +1,9 @@
-import { combineReducers } from 'redux';
-import { GET_MOVIES_LIST, GET_MOVIE_Deets } from '../type/Types';
+import { GET_MOVIES_LIST, GET_MOVIE_Deets, GET_SEARCH_MOVIE } from '../type/Types';
+
 const initialState = {
   movieList: [],
   movieDetails:[],
+  searchMovieList:[]
 };
 
 const movieReducer = (state = initialState, action) => {
@@ -18,6 +19,11 @@ const movieReducer = (state = initialState, action) => {
         movieDetails:action.payload
       };
 
+      case GET_SEARCH_MOVIE:
+      return {
+          ...state,
+          searchMovieList:action.payload,
+        };
     default:
       return state;
   }

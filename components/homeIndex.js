@@ -66,15 +66,18 @@ const SearchTab = createStackNavigator(
   },
   {
     defaultNavigationOptions: {
+      
       headerStyle: {
         backgroundColor: 'white',
       },
       headerTitleStyle: { 
         textAlign:"center", 
-        flex:1 
+        flex:1 ,
+       // marginLeft:10,
     },
-      headerTintColor: 'black',
-      title: 'Search Tab',
+    
+      // headerTintColor: 'black',
+      // title: 'Home',
     },
   }
 );
