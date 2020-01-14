@@ -1,0 +1,216 @@
+27e05e943c6a0660f0d7941b4d74c096
+"use strict";Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _react = _interopRequireDefault(require("react"));
+var _reactRedux = require("react-redux");
+var _redux = require("redux");
+
+var movieAction = _interopRequireWildcard(require("../action/ListMovies"));
+var _reactNative = require("react-native");var _jsxFileName = "D:\\MoviesApp\\src\\screens\\homeScreen.js";function _getRequireWildcardCache() {if (typeof WeakMap !== "function") return null;var cache = new WeakMap();_getRequireWildcardCache = function _getRequireWildcardCache() {return cache;};return cache;}function _interopRequireWildcard(obj) {if (obj && obj.__esModule) {return obj;}if (obj === null || typeof obj !== "object" && typeof obj !== "function") {return { default: obj };}var cache = _getRequireWildcardCache();if (cache && cache.has(obj)) {return cache.get(obj);}var newObj = {};var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;for (var key in obj) {if (Object.prototype.hasOwnProperty.call(obj, key)) {var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;if (desc && (desc.get || desc.set)) {Object.defineProperty(newObj, key, desc);} else {newObj[key] = obj[key];}}}newObj.default = obj;if (cache) {cache.set(obj, newObj);}return newObj;}function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _extends() {_extends = Object.assign || function (target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i];for (var key in source) {if (Object.prototype.hasOwnProperty.call(source, key)) {target[key] = source[key];}}}return target;};return _extends.apply(this, arguments);}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self, call) {if (call && (typeof call === "object" || typeof call === "function")) {return call;}return _assertThisInitialized(self);}function _assertThisInitialized(self) {if (self === void 0) {throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return self;}function _getPrototypeOf(o) {_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {return o.__proto__ || Object.getPrototypeOf(o);};return _getPrototypeOf(o);}function _defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}function _createClass(Constructor, protoProps, staticProps) {if (protoProps) _defineProperties(Constructor.prototype, protoProps);if (staticProps) _defineProperties(Constructor, staticProps);return Constructor;}function _inherits(subClass, superClass) {if (typeof superClass !== "function" && superClass !== null) {throw new TypeError("Super expression must either be null or a function");}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } });if (superClass) _setPrototypeOf(subClass, superClass);}function _setPrototypeOf(o, p) {_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {o.__proto__ = p;return o;};return _setPrototypeOf(o, p);}var
+
+
+
+
+
+
+
+
+
+
+
+HomeScreen = function (_React$Component) {_inherits(HomeScreen, _React$Component);_createClass(HomeScreen, [{ key: "componentDidMount", value: function componentDidMount()
+
+
+    {
+
+      console.log("component did mount");var
+      test = this.props.test;
+      console.log("component did mount" + this.props.test);
+
+      test.getMovieList();
+    } }]);
+
+
+
+
+  function HomeScreen() {var _this;_classCallCheck(this, HomeScreen);
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(HomeScreen).call(this));_this.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    renderSeparator = function () {
+      return (
+        _react.default.createElement(_reactNative.View, {
+          style: {
+            height: 10,
+            width: 3,
+            backgroundColor: '#D81458' }, __source: { fileName: _jsxFileName, lineNumber: 56 } }));
+
+
+
+    };_this.state = { data: ['Bumblebee', 'Aquaman', 'Dragon Ball Super: Broly', 'Steelman'], data1: [2, 4, 3, 8] };return _this;}_createClass(HomeScreen, [{ key: "render", value: function render()
+
+
+
+
+
+    {var _this2 = this;var
+      movieList = this.props.movieList;
+      return (
+
+        _react.default.createElement(_reactNative.View, { style: styles.MainContainer, __source: { fileName: _jsxFileName, lineNumber: 74 } },
+        _react.default.createElement(_reactNative.View, { style: styles.titleContainer, __source: { fileName: _jsxFileName, lineNumber: 75 } },
+        _react.default.createElement(_reactNative.View, { __source: { fileName: _jsxFileName, lineNumber: 76 } },
+        _react.default.createElement(_reactNative.Text, { style: styles.textStyleForTitle, __source: { fileName: _jsxFileName, lineNumber: 77 } }, "Most Popular")),
+
+
+        _react.default.createElement(_reactNative.Image, {
+          style: { marginTop: 6, width: 25, height: 25 },
+          source: require('../assets/list-menu.png'), __source: { fileName: _jsxFileName, lineNumber: 80 } })),
+
+
+
+        _react.default.createElement(_reactNative.View, { style: styles.flexMainContainer, __source: { fileName: _jsxFileName, lineNumber: 86 } },
+
+        _react.default.createElement(_reactNative.FlatList, {
+
+          data: movieList,
+          keyExtractor: function keyExtractor(item, index) {return index.toString();},
+          renderItem: function renderItem(_ref) {var item = _ref.item;return (
+              _react.default.createElement(_reactNative.TouchableOpacity, {
+                onPress: function onPress() {return _this2.props.navigation.navigate('Details', { movieId: item.imdbID });}, __source: { fileName: _jsxFileName, lineNumber: 93 } },
+
+              _react.default.createElement(_reactNative.View, { style: styles.flexMainContainer, __source: { fileName: _jsxFileName, lineNumber: 96 } },
+              _react.default.createElement(_reactNative.Image, {
+                style: { width: 120, height: 170, borderRadius: 15 },
+                source: { uri: item.Poster }, __source: { fileName: _jsxFileName, lineNumber: 97 } }),
+
+              _react.default.createElement(_reactNative.View, { style: { marginLeft: 10 }, __source: { fileName: _jsxFileName, lineNumber: 101 } },
+              _react.default.createElement(_reactNative.Text, {
+                style: {
+                  paddingLeft: 5,
+                  fontSize: 20,
+                  fontWeight: '300' }, __source: { fileName: _jsxFileName, lineNumber: 102 } },
+
+              item.Title),
+
+
+              _react.default.createElement(_reactNative.View, { style: { flex: 1, flexDirection: 'row' }, __source: { fileName: _jsxFileName, lineNumber: 111 } },
+              _react.default.createElement(_reactNative.Text, { style: styles.yearsAndLangTextStyle, __source: { fileName: _jsxFileName, lineNumber: 112 } }, item.Year),
+              _react.default.createElement(_reactNative.View, { style: true, style: styles.verticleSeperator, __source: { fileName: _jsxFileName, lineNumber: 113 } }),
+              _react.default.createElement(_reactNative.Text, { style: styles.yearsAndLangTextStyle, __source: { fileName: _jsxFileName, lineNumber: 114 } }, "EN")),
+
+              _react.default.createElement(_reactNative.View, { __source: { fileName: _jsxFileName, lineNumber: 116 } },
+              _react.default.createElement(_reactNative.Text, { style: styles.actionAndPublicTextStyle, __source: { fileName: _jsxFileName, lineNumber: 117 } },
+              item.Type)),
+
+
+              _react.default.createElement(_reactNative.Text, { style: styles.ratingText, __source: { fileName: _jsxFileName, lineNumber: 121 } }, "6.9"),
+              _react.default.createElement(_reactNative.Text, { style: styles.publicTextStyle, __source: { fileName: _jsxFileName, lineNumber: 122 } }, "Public")))));}, __source: { fileName: _jsxFileName, lineNumber: 88 } }))));
+
+
+
+
+
+
+
+
+
+
+    } }]);return HomeScreen;}(_react.default.Component);HomeScreen.navigationOptions = function (_ref2) {var navigation = _ref2.navigation;return { title: 'Home', headerRight: function headerRight() {return _react.default.createElement(_reactNative.Image, { source: require('../assets/filter.png'), style: { marginRight: 10, width: 22, height: 22 }, __source: { fileName: _jsxFileName, lineNumber: 47 } });} };};
+
+
+var mapStateToProps = function mapStateToProps(state) {return {
+    movieList: state.movieList.movieList };};
+
+
+var ActionCreators = _extends(
+{},
+movieAction);
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {return {
+    test: (0, _redux.bindActionCreators)(ActionCreators, dispatch) };};var _default =
+
+
+(0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(HomeScreen);exports.default = _default;
+
+
+
+var styles = _reactNative.StyleSheet.create({
+  MainContainer: {
+    flex: 1,
+    margin: 5 },
+
+
+  titleContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    margin: 10,
+
+    paddingBottom: 50,
+    justifyContent: 'space-between' },
+
+  flexContainer: {
+    flex: 1,
+    margin: 5,
+    marginTop: 0,
+    justifyContent: 'space-between',
+
+    flexDirection: 'row' },
+
+
+
+
+  textStyleForTitle: {
+    fontSize: 25,
+    fontWeight: 'bold' },
+
+  flexMainContainer: {
+    margin: 3,
+
+    flexDirection: 'row',
+    backgroundColor: 'white' },
+
+  verticleSeperator: {
+    height: 16,
+    width: 2,
+    marginTop: 3,
+    marginLeft: 5,
+    backgroundColor: '#D81458' },
+
+  yearsAndLangTextStyle: {
+    paddingLeft: 5,
+    fontSize: 15,
+    color: '#D81458' },
+
+  actionAndPublicTextStyle: {
+    marginBottom: 50,
+    paddingLeft: 5,
+    fontSize: 15,
+    color: '#D81458' },
+
+  ratingText: {
+    paddingLeft: 5,
+    paddingTop: 10,
+    fontSize: 15,
+    fontWeight: 'bold',
+    color: '#D81458' },
+
+  publicTextStyle: {
+    paddingLeft: 5,
+    fontSize: 15,
+    color: '#D81458' } });

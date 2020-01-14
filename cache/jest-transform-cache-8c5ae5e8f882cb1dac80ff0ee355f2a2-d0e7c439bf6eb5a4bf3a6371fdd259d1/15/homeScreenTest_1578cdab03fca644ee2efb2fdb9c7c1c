@@ -1,0 +1,25 @@
+b64131be50786a0a31a89672cd69735f
+"use strict";var _react = _interopRequireDefault(require("react"));
+var _homeScreen = _interopRequireDefault(require("../homeScreen"));
+var _reactTestRenderer = _interopRequireDefault(require("react-test-renderer"));
+var _reduxThunk = _interopRequireDefault(require("redux-thunk"));
+var _reduxMockStore = _interopRequireDefault(require("redux-mock-store"));var _jsxFileName = "D:\\MoviesApp\\src\\screens\\__tests__\\homeScreenTest.js";function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+
+
+jest.mock('react-native-gesture-handler', function () {});
+
+
+var middlewares = [_reduxThunk.default];
+var mockStore = (0, _reduxMockStore.default)(middlewares);
+var initialState = {
+  movieList: [],
+  movieDetails: [] };
+
+var store = mockStore(initialState);
+
+
+test('renders correctly', function () {
+  var tree = _reactTestRenderer.default.create(_react.default.createElement(_homeScreen.default, { store: store, __source: { fileName: _jsxFileName, lineNumber: 22 } })).toJSON();
+  expect(tree).toMatchSnapshot();
+});

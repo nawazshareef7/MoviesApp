@@ -36,6 +36,10 @@ target 'MoviesApp' do
 
   pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
 
+  pod 'RNSentry', :path => '../node_modules/@sentry/react-native'
+
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+
   target 'MoviesAppTests' do
     inherit! :search_paths
     # Pods for testing

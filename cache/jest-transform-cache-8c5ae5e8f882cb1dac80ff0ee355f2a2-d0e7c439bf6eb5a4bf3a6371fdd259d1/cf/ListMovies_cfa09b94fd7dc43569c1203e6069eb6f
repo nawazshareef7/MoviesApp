@@ -1,0 +1,39 @@
+fd02dd33a735c28a985047a345fd12be
+"use strict";Object.defineProperty(exports, "__esModule", { value: true });exports.setMovieList = setMovieList;exports.getMovieList = getMovieList;var _Types = require("../type/Types");
+
+function setMovieList(movieList) {
+  return {
+    type: _Types.GET_MOVIES_LIST,
+    payload: movieList };
+
+}
+
+function getMovieList() {
+  return function _callee(dispatch) {var API_KEY, q;return regeneratorRuntime.async(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:
+            try {
+              API_KEY = 'ce762116';
+              q = 'batman';
+
+              URL = "http://www.omdbapi.com/?s=" + q + "&apikey=" + API_KEY;
+              console.log("ÜRL=" + URL);
+
+              fetch(URL, {
+                method: 'GET',
+                headers: {
+                  'Accept': 'application/json',
+                  'Content-Type': 'application/json' } }).
+
+
+
+              then(function (response) {return response.json();}).
+              then(function (responseJson)
+              {
+                console.log("Dumm " + JSON.stringify(responseJson.Search));
+                dispatch(setMovieList(responseJson.Search));
+              });
+
+            } catch (error) {
+              console.error(error);
+            }case 1:case "end":return _context.stop();}}});};
+
+}

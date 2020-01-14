@@ -3,16 +3,16 @@ import { Image,ImageBackground,View } from 'react-native';
 import {  createAppContainer } from 'react-navigation';
 import{createBottomTabNavigator} from 'react-navigation-tabs'
 import {createStackNavigator} from 'react-navigation-stack';
-import HomeActivity from '../components/screens/homeScreen';
-import SearchActivity from '../components/screens/searchScreen';
-import DetailsActivity from '../components/screens/detailsScreen';
-import MoreActivity from '../components/screens/moreScreen';
-import style from "../components/styles/style"
+import HomeActivity from '../src/screens/homeScreen';
+import SearchActivity from '../src/screens/searchScreen';
+import DetailsActivity from '../src/screens/detailsScreen';
+import MoreActivity from '../src/screens/moreScreen';
+import style from "../src/styles/style"
 
 const SplashScreen= () => {
   return (
     <View style={ [style.container] }>
-      <ImageBackground  style= { style.backgroundImage } source={require('../components/assets/bumble.jpg')} />
+      <ImageBackground  style= { style.backgroundImage } source={require('../src/assets/bumble.jpg')} />
      
     </View>
   );
@@ -65,20 +65,21 @@ const SearchTab = createStackNavigator(
     Search: SearchActivity 
   },
   {
-    defaultNavigationOptions: {
-      
-      headerStyle: {
-        backgroundColor: 'white',
-      },
-      headerTitleStyle: { 
-        textAlign:"center", 
-        flex:1 ,
-       // marginLeft:10,
-    },
     
-      // headerTintColor: 'black',
-      // title: 'Home',
-    },
+    defaultNavigationOptions: {
+      headerShown:false
+    //   headerStyle: {
+    //     backgroundColor: 'white',
+    //   },
+    //   headerTitleStyle: { 
+    //     textAlign:"center", 
+    //     flex:1 ,
+    //    // marginLeft:10,
+    // },
+    
+    //   headerTintColor: 'black',
+    //   title: 'Home',
+     },
   }
 );
 
@@ -95,19 +96,19 @@ const MainApp = createBottomTabNavigator(
         if (routeName === 'Home') {
           return (
             <Image
-              source={ require('../components/assets/home-icon-silhouette.png') }
+              source={ require('../src/assets/home-icon-silhouette.png') }
               style={{ width: 20, height: 20, }} />
           );
         } else if(routeName === 'Search') {
           return (
             <Image
-              source={ require('../components/assets/magnifying-glass.png') }
+              source={ require('../src/assets/magnifying-glass.png') }
               style={{ width: 20, height: 20 }} />
           );
         }else {
           return (
             <Image
-              source={ require('../components/assets/menu.png') }
+              source={ require('../src/assets/menu.png') }
               style={{ width: 20, height: 20 }} />
           );
         }

@@ -1,0 +1,39 @@
+170b084a66c9e47124314d2380ccc3a2
+"use strict";var _react = _interopRequireDefault(require("react"));
+var _homeScreen = _interopRequireDefault(require("../homeScreen"));
+var _reactTestRenderer = _interopRequireDefault(require("react-test-renderer"));
+var _reduxThunk = _interopRequireDefault(require("redux-thunk"));
+var _reduxMockStore = _interopRequireDefault(require("redux-mock-store"));
+
+var _jestEnzyme = require("jest-enzyme");var _jsxFileName = "D:\\MoviesApp\\src\\screens\\__tests__\\homeScreenTest.js";function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+jest.mock('react-native-gesture-handler', function () {});
+
+var middlewares = [_reduxThunk.default];
+var mockStore = (0, _reduxMockStore.default)(middlewares);
+var initialState = {
+  movieList: [],
+  movieDetails: [] };
+
+var store = mockStore(initialState);
+
+test('renders correctly', function () {
+  var tree = _reactTestRenderer.default.create(_react.default.createElement(_homeScreen.default, { store: store, __source: { fileName: _jsxFileName, lineNumber: 20 } })).toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+describe('<HomeScreen/>', function () {
+  flatList.
+  first().
+  instance().
+  scrollToEnd();
+  it('how to simulate scroll?', function () {
+    var list = (0, _jestEnzyme.mount)(_react.default.createElement(FlatList, { onEndReach: callback, __source: { fileName: _jsxFileName, lineNumber: 30 } }));
+
+
+
+    expect(callback).toHaveBeenCalled();
+    var callback = jest.fn();
+    var flatList = wrapper.find(FlatList);
+  });
+});
